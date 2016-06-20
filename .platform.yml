@@ -1,2 +1,2 @@
-base: debian-wheezy
-infrastructure: 1.5.0
+base: debian-jessie
+infrastructure: 3.5.1
