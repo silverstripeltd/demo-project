@@ -5,7 +5,9 @@
 		"php": ">=5.3.2",
 		"silverstripe/cms": "3.1.*@stable",
 		"silverstripe/framework": "3.1.*@stable",
-		"silverstripe-themes/simple": "*"
+		"silverstripe-themes/simple": "*",
+		"silverstripe/crontask": "^1.1",
+		"silverstripe/dynamodb": "^2.0"
 	},
 	"config": {
 		"process-timeout": 600	

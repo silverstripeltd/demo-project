@@ -1,2 +1,2 @@
 base: debian-jessie
-infrastructure: 3.5.1
+infrastructure: 3.6.2
