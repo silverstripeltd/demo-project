@@ -10,3 +10,6 @@ silverstripe-cache
 vendor/
 framework/
 cms/
+crontask/
+silverstripe-dynamodb/
+themes/simple
