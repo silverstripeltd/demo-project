@@ -35,7 +35,7 @@
 					<li class="col-md-12">
 						<div class="image">
 							<a href="blog-detail.html"></a>
-							<img src="http://placehold.it/100x100" alt="" />
+							<img src="//placehold.it/100x100" alt="" />
 						</div>
 						
 						<ul class="top-info">
@@ -47,7 +47,7 @@
 					<li class="col-md-12">
 						<div class="image">
 							<a href="blog-detail.html"></a>
-							<img src="http://placehold.it/100x100" alt="" />
+							<img src="//placehold.it/100x100" alt="" />
 						</div>
 						
 						<ul class="top-info">
@@ -59,7 +59,7 @@
 					<li class="col-md-12">
 						<div class="image">
 							<a href="blog-detail.html"></a>
-							<img src="http://placehold.it/100x100" alt="" />
+							<img src="//placehold.it/100x100" alt="" />
 						</div>
 						
 						<ul class="top-info">
