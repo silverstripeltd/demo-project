@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Web;
+
+
+use App\Web\Property;
+use SilverStripe\Admin\ModelAdmin;
+
+
+
 class PropertyAdmin extends ModelAdmin {
 
 	private static $menu_title = 'Properties';
@@ -7,8 +15,8 @@ class PropertyAdmin extends ModelAdmin {
 	private static $url_segment = 'properties';
 
 	private static $managed_models = array (
-		'Property'
+		Property::class
 	);
 
-	private static $menu_icon = 'mysite/icons/property.png';
+	private static $menu_icon_class = 'font-icon-home';
 }

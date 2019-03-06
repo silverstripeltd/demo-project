@@ -1,1 +1,2 @@
-infrastructure: ^3.9.4
+php_settings:
+  version: 7.3

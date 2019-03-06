@@ -1,5 +1,18 @@
 <?php
 
+namespace App\Web;
+
+
+
+
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\ORM\DataExtension;
+
+
+
 class SiteConfigExtension extends DataExtension {
 
 	private static $db = array (

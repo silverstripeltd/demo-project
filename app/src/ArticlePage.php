@@ -1,25 +1,63 @@
 <?php
 
+namespace App\Web;
+
+use Page;
+
+
+
+
+
+
+
+
+
+
+
+
+use SilverStripe\Assets\Image;
+use SilverStripe\Assets\File;
+use App\Web\Region;
+use App\Web\ArticleCategory;
+use App\Web\ArticleComment;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\CheckboxSetField;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\EmailField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\Form;
+use SilverStripe\Control\Session;
+use PageController;
+
+
+
 class ArticlePage extends Page {
 
 	private static $has_one = array (
-		'Photo' => 'Image',
-		'Brochure' => 'File',
-		'Region' => 'Region'
+		'Photo' => Image::class,
+		'Brochure' => File::class,
+		'Region' => Region::class
 	);
 
 
 	private static $many_many = array (
-		'Categories' => 'ArticleCategory'
+		'Categories' => ArticleCategory::class
 	);
 
 
 	private static $has_many = array (
-		'Comments' => 'ArticleComment'
+		'Comments' => ArticleComment::class
 	);
 
 
 	private static $can_be_root = false;
+
+	private static $table_name = 'ArticlePage';
 
 
 	public function getCMSFields() {
@@ -42,7 +80,7 @@ class ArticlePage extends Page {
 
 		$fields->addFieldToTab('Root.Main', DropdownField::create(
 			'RegionID',
-			'Region',
+			Region::class,
 			Region::get()->map('ID','Title')
 		)->setEmptyString('-- None --'), 'Content');
 
@@ -58,7 +96,7 @@ class ArticlePage extends Page {
 	
 }
 
-class ArticlePage_Controller extends Page_Controller {
+class ArticlePage_Controller extends PageController {
 
 
 	private static $allowed_actions = array (
@@ -72,7 +110,7 @@ class ArticlePage_Controller extends Page_Controller {
 			__FUNCTION__,
 			FieldList::create(
 				TextField::create('Name',''),
-				EmailField::create('Email',''),
+				EmailField::create(Email::class,''),
 				TextareaField::create('Comment','')
 			),
 			FieldList::create(
@@ -80,7 +118,7 @@ class ArticlePage_Controller extends Page_Controller {
 					->setUseButtonTag(true)
 					->addExtraClass('btn btn-default-color btn-lg')
 			),
-			RequiredFields::create('Name','Email','Comment')
+			RequiredFields::create('Name',Email::class,'Comment')
 		)->addExtraClass('form-style');
 
 		foreach($form->Fields() as $field) {

@@ -5,7 +5,7 @@
 			<div class="main col-sm-8">						
 				<% with $Region %>
 					<div class="blog-main-image">
-						$Photo.SetWidth(750)
+						$Photo.ScaleWidth(750)
 					</div>
 					<p>$Description</p>
 				<% end_with %>

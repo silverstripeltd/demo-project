@@ -9,7 +9,7 @@
 				<h1 class="blog-title">$Title</h1>
 				
 				<div class="blog-main-image">
-				<% with $Photo.SetWidth(750) %>
+				<% with $Photo.ScaleWidth(750) %>
 					<img src="$URL" width="$Width" height="$Height" class="my-custom-class">
 				<% end_with %>
 					<div class="tag"><i class="fa fa-file-text"></i></div>

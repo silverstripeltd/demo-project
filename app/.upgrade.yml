@@ -1,0 +1,17 @@
+mappings:
+  ArticleHolder: App\Web\ArticleHolder
+  ArticleHolder_Controller: App\Web\ArticleHolder_Controller
+  ArticleComment: App\Web\ArticleComment
+  ArticlePage: App\Web\ArticlePage
+  ArticlePage_Controller: App\Web\ArticlePage_Controller
+  RegionsPage: App\Web\RegionsPage
+  RegionsPage_Controller: App\Web\RegionsPage_Controller
+  SiteConfigExtension: App\Web\SiteConfigExtension
+  HomePage: App\Web\HomePage
+  HomePage_Controller: App\Web\HomePage_Controller
+  Region: App\Web\Region
+  PropertySearchPage: App\Web\PropertySearchPage
+  PropertySearchPage_Controller: App\Web\PropertySearchPage_Controller
+  PropertyAdmin: App\Web\PropertyAdmin
+  ArticleCategory: App\Web\ArticleCategory
+  Property: App\Web\Property

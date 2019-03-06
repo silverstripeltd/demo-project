@@ -122,7 +122,7 @@
 										<h3>$Title</h3>
 										<span class="location">$Region.Title</span>
 									</a>
-									$PrimaryPhoto.CroppedImage(220,194)
+									$PrimaryPhoto.FillMax(220,194)
 								</div>
 								<div class="price">
 									<span>$PricePerNight.Nice</span><p>per night<p>
@@ -196,7 +196,7 @@
 									<a href="$Link">
 										<span class="btn btn-default"><i class="fa fa-file-o"></i> Read More</span>
 									</a>
-									$Photo.CroppedImage(220,148)
+									$Photo.FillMax(220,148)
 								</div>
 								<div class="tag"><i class="fa fa-file-text"></i></div>
 								<div class="info-blog">

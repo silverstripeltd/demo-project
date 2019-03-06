@@ -1,14 +1,42 @@
 <?php
 
+namespace App\Web;
+
+use Page;
+
+
+
+
+use SQLQuery;
+
+
+
+
+
+use App\Web\ArticleCategory;
+use App\Web\ArticlePage;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\Versioned\Versioned;
+use SilverStripe\ORM\FieldType\DBDate;
+use SilverStripe\View\ArrayData;
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\PaginatedList;
+use PageController;
+
+
+
 class ArticleHolder extends Page {
 
 	private static $has_many = array (
-		'Categories' => 'ArticleCategory'
+		'Categories' => ArticleCategory::class
 	);
 
 
 	private static $allowed_children = array (
-		'ArticlePage'
+		ArticlePage::class
 	);
 
 
@@ -34,12 +62,12 @@ class ArticleHolder extends Page {
 
 	public function ArchiveDates() {
 		$list = ArrayList::create();
-		$stage = Versioned::current_stage();		
+		$stage = Versioned::get_stage();		
 
 		$query = new SQLQuery(array ());
 		$query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')","DateString")
 			  ->setFrom("ArticlePage_{$stage}")
-			  ->setOrderBy("Date", "ASC")
+			  ->setOrderBy(DBDate::class, "ASC")
 			  ->setDistinct(true);
 
 		$result = $query->execute();
@@ -67,7 +95,7 @@ class ArticleHolder extends Page {
 
 }
 
-class ArticleHolder_Controller extends Page_Controller {
+class ArticleHolder_Controller extends PageController {
 
 	private static $allowed_actions = array (
 		'category',
@@ -85,7 +113,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		))->sort('Date DESC');
 	}
 
-	public function category (SS_HTTPRequest $r) {
+	public function category (HTTPRequest $r) {
 		$category = ArticleCategory::get()->byID(
 			$r->param('ID')
 		);
@@ -103,7 +131,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		);
 	}
 
-	public function region (SS_HTTPRequest $r) {
+	public function region (HTTPRequest $r) {
 		$region = Region::get()->byID(
 			$r->param('ID')
 		);
@@ -121,7 +149,7 @@ class ArticleHolder_Controller extends Page_Controller {
 		);
 	}
 	
-	public function date(SS_HTTPRequest $r) {
+	public function date(HTTPRequest $r) {
 		$year = $r->param('ID');
 		$month = $r->param('OtherID');
 

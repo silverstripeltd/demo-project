@@ -1,9 +1,24 @@
 <?php
 
+namespace App\Web;
+
+use Page;
+
+
+
+
+use App\Web\Region;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Control\HTTPRequest;
+use PageController;
+
+
+
 class RegionsPage extends Page {
 
 	private static $has_many = array (
-		'Regions' => 'Region',
+		'Regions' => Region::class,
 	);
 
 
@@ -20,14 +35,14 @@ class RegionsPage extends Page {
 	}
 }
 
-class RegionsPage_Controller extends Page_Controller {
+class RegionsPage_Controller extends PageController {
 
 	private static $allowed_actions = array (
 		'show'
 	);
 
 
-	public function show(SS_HTTPRequest $request) {
+	public function show(HTTPRequest $request) {
 		$region = Region::get()->byID($request->param('ID'));
 
 		if(!$region) {

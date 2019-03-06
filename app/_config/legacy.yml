@@ -1,0 +1,11 @@
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    ArticleHolder: App\Web\ArticleHolder
+    ArticleComment: App\Web\ArticleComment
+    ArticlePage: App\Web\ArticlePage
+    RegionsPage: App\Web\RegionsPage
+    HomePage: App\Web\HomePage
+    Region: App\Web\Region
+    PropertySearchPage: App\Web\PropertySearchPage
+    ArticleCategory: App\Web\ArticleCategory
+    Property: App\Web\Property\

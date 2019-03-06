@@ -1,0 +1,8 @@
+---
+Name: mysite
+---
+SilverStripe\View\SSViewer:
+  theme: 'one-ring'
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - App\Web\SiteConfigExtension

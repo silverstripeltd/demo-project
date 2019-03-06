@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Web;
+
+
+use App\Web\ArticlePage;
+use SilverStripe\ORM\DataObject;
+
+
+
 class ArticleComment extends DataObject {
 
 	private static $db = array (
@@ -10,6 +18,8 @@ class ArticleComment extends DataObject {
 
 
 	private static $has_one = array (
-		'ArticlePage' => 'ArticlePage'
+		'ArticlePage' => ArticlePage::class
 	);
+
+	private static $table_name = 'ArticleComment';
 }

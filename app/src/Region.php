@@ -1,5 +1,19 @@
 <?php
 
+namespace App\Web;
+
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Assets\Image;
+use App\Web\RegionsPage;
+use App\Web\ArticlePage;
+use SilverStripe\Forms\TextField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Control\Controller;
+use SilverStripe\ORM\DataObject;
+
+
+
 class Region extends DataObject {
 
 	private static $db = array (
@@ -9,12 +23,12 @@ class Region extends DataObject {
 
 
 	private static $has_one = array (
-		'Photo' => 'Image',
-		'RegionsPage' => 'RegionsPage'
+		'Photo' => Image::class,
+		'RegionsPage' => RegionsPage::class
 	);
 
 	private static $has_many = array (
-		'Articles' => 'ArticlePage'
+		'Articles' => ArticlePage::class
 	);
 
 	private static $summary_fields = array (
@@ -23,10 +37,12 @@ class Region extends DataObject {
 		'Description' => 'Short description',
 	);
 
+	private static $table_name = 'Region';
+
 
 	public function getGridThumbnail() {
 		if($this->Photo()->exists()) {
-			return $this->Photo()->SetWidth(100);
+			return $this->Photo()->ScaleWidth(100);
 		}
 
 		return '(no image)';

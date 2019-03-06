@@ -1,16 +1,38 @@
 {
-	"name": "silverstripe/installer",
-	"description": "The SilverStripe Framework Installer",
-	"require": {
-		"php": ">=5.3.2",
-		"silverstripe/cms": "3.1.*@stable",
-		"silverstripe/framework": "3.1.*@stable",
-		"silverstripe-themes/simple": "*",
-		"silverstripe/crontask": "^1.1",
-		"silverstripe/dynamodb": "^2.0"
-	},
-	"config": {
-		"process-timeout": 600	
-	},
-	"minimum-stability": "dev"
+    "name": "silverstripe/installer",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": ">=5.6",
+        "silverstripe-themes/simple": "*",
+        "silverstripe/crontask": "^2.1.1",
+        "silverstripe/dynamodb": "^4.0.1",
+        "silverstripe/recipe-cms": "^4.3.1"
+    },
+    "config": {
+        "process-timeout": 600
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
+            "web.config"
+        ],
+        "expose":[
+            "themes/one-ring/css",
+            "themes/one-ring/fonts",
+            "themes/one-ring/images",
+            "themes/one-ring/js",
+            "themes/one-ring/static"
+        ]
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\i18n\i18n;
+
 global $project;
 $project = 'mysite';
 
