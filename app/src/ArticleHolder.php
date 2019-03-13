@@ -7,12 +7,7 @@ use Page;
 
 
 
-use SQLQuery;
-
-
-
-
-
+use SilverStripe\ORM\Queries\SQLSelect;
 use App\Web\ArticleCategory;
 use App\Web\ArticlePage;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
@@ -64,7 +59,7 @@ class ArticleHolder extends Page {
 		$list = ArrayList::create();
 		$stage = Versioned::get_stage();		
 
-		$query = new SQLQuery(array ());
+		$query = new SQLSelect(array ());
 		$query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')","DateString")
 			  ->setFrom("ArticlePage_{$stage}")
 			  ->setOrderBy(DBDate::class, "ASC")

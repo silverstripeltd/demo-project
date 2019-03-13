@@ -126,7 +126,7 @@ class ArticlePage_Controller extends PageController {
 				  ->setAttribute('placeholder', $field->getName().'*');
 		}
 
-		$data = Session::get("FormData.{$form->getName()}.data");
+		$data = $this->getRequest()->getSession()->get("FormData.{$form->getName()}.data");
 		
 		return $data ? $form->loadDataFrom($data) : $form;
 	}

@@ -89,7 +89,7 @@ class PropertySearchPage_Controller extends PageController {
 
 		if($request->isAjax()) {
 			return $this->customise($data)
-						->renderWith('PropertySearchResults');
+						->renderWith('Includes/PropertySearchResults');
 		}
 
 		return $data;
