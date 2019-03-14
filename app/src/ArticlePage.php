@@ -38,6 +38,10 @@ use PageController;
 
 class ArticlePage extends Page {
 
+    private static $db = [
+        'Date' => 'Date'
+    ];
+
 	private static $has_one = array (
 		'Photo' => Image::class,
 		'Brochure' => File::class,

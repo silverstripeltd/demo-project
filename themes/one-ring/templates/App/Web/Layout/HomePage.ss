@@ -201,7 +201,7 @@
 								<div class="tag"><i class="fa fa-file-text"></i></div>
 								<div class="info-blog">
 									<ul class="top-info">
-										<li><i class="fa fa-calendar"></i> $Date.Format('F j, Y')</li>
+										<li><i class="fa fa-calendar"></i> $Date.Long</li>
 										<li><i class="fa fa-comments-o"></i> 2</li>
 										<li><i class="fa fa-tags"></i> $CategoriesList</li>
 									</ul>

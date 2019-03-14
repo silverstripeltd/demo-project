@@ -14,7 +14,6 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\Versioned\Versioned;
-use SilverStripe\ORM\FieldType\DBDate;
 use SilverStripe\View\ArrayData;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\ORM\FieldType\DBField;
