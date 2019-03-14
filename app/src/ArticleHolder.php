@@ -57,18 +57,18 @@ class ArticleHolder extends Page {
 
 	public function ArchiveDates() {
 		$list = ArrayList::create();
-		$stage = Versioned::get_stage();		
+		$stage = Versioned::get_stage();
 
 		$query = new SQLSelect(array ());
 		$query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')","DateString")
 			  ->setFrom("ArticlePage_{$stage}")
-			  ->setOrderBy(DBDate::class, "ASC")
+			  ->setOrderBy("Date", "ASC")
 			  ->setDistinct(true);
 
 		$result = $query->execute();
 		
 		if($result) {
-			while($record = $result->nextRecord()) {
+			foreach ($result as $record) {
 				list($year, $monthName, $monthNumber) = explode('_', $record['DateString']);
 
 				$list->push(ArrayData::create(array(
