@@ -6,7 +6,7 @@
 		
 			<!-- BEGIN MAIN CONTENT -->
 			<div class="main col-sm-8">
-				<% include App/Web/Includes/PropertySearchResults %>
+				<% include App/Web/PropertySearchResults %>
 			</div>	
 			<!-- END MAIN CONTENT -->
 			
