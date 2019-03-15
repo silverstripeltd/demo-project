@@ -44,7 +44,7 @@
 								<h3>
 									<a href="$Link">$Title</a>
 									<small>$Region.Title</small>
-									<small>Available $AvailableStart.Nice - $AvailableEnd.Nice</small>
+									<small>Available $AvailableStart.Short - $AvailableEnd.Short</small>
 								</h3>
 								<p>$Description.LimitSentences(3)</p>
 							

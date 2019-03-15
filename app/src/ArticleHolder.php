@@ -167,8 +167,8 @@ class ArticleHolder_Controller extends PageController {
 		));
 
 		return array (
-			'StartDate' => DBField::create_field('SS_DateTime', $startDate),
-			'EndDate' => DBField::create_field('SS_DateTime', $endDate)
+			'StartDate' => DBField::create_field('Date', $startDate),
+			'EndDate' => DBField::create_field('Date', $endDate)
 		);
 
 	}

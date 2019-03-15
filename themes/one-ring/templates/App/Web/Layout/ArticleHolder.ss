@@ -14,7 +14,7 @@
 						<% else_if $SelectedCategory %>
 							<h3>Category: $SelectedCategory.Title</h3>
 						<% else_if $StartDate %>
-							<h3>Date: $StartDate.Full to $EndDate.Full</h3>
+							<h3>Date: $StartDate.Format('d MMM y') to $EndDate.Format('d MMM y')</h3>
 						<% end_if %>
 
 						<% loop $PaginatedArticles %>
@@ -28,7 +28,7 @@
 							<div class="tag"><i class="fa fa-file-text"></i></div>
 							<div class="info-blog">
 								<ul class="top-info">
-									<li><i class="fa fa-calendar"></i> $Date.Long</li>
+									<li><i class="fa fa-calendar"></i> $Date.Format('d MMMM y')</li>
 									<li><i class="fa fa-comments-o"></i> 2</li>
 									<li><i class="fa fa-tags"></i> $CategoriesList</li>
 								</ul>
