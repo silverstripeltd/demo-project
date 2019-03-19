@@ -22,7 +22,7 @@
 						<li><i class="fa fa-tags"></i> $CategoriesList</li>
 					</ul>
 					
-					<div id="post-author"><i class="fa fa-pencil"></i> By $Author</div>
+					<div id="post-author"><i class="fa fa-pencil"></i> By $ArticleAuthor</div>
 				</div>
 				
 				<div class="post-content">

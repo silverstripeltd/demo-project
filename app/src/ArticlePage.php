@@ -14,6 +14,7 @@ class ArticlePage extends Page
 
     private static $db = [
         'Date' => 'Date',
+        'Teaser' => 'Text',
         'Author' => 'Varchar(50)'
     ];
 
@@ -71,4 +72,8 @@ class ArticlePage extends Page
         }
     }
 
+    public function ArticleAuthor()
+    {
+        return $this->Author;
+    }
 }
