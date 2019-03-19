@@ -30,18 +30,18 @@ namespace {
             // You can include any CSS or JS required by your project here.
             // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
             Requirements::css("//fonts.googleapis.com/css?family=Raleway:300,500,900%7COpen+Sans:400,700,400italic");
-            Requirements::css("{$this->ThemeDir()}/css/bootstrap.min.css");
-            Requirements::css("{$this->ThemeDir()}/css/style.css");
-
-            Requirements::javascript("{$this->ThemeDir()}/js/common/modernizr.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/jquery-1.11.1.min.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/bootstrap.min.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/bootstrap-datepicker.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/chosen.min.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/bootstrap-checkbox.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/nice-scroll.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/common/jquery-browser.js");
-            Requirements::javascript("{$this->ThemeDir()}/js/scripts.js");
+            Requirements::themedCSS("bootstrap.min.css");
+            Requirements::themedCSS("style.css");
+//
+            Requirements::themedJavascript("js/common/modernizr.js");
+            Requirements::themedJavascript("js/common/jquery-1.11.1.min.js");
+            Requirements::themedJavascript("js/common/bootstrap.min.js");
+            Requirements::themedJavascript("js/common/bootstrap-datepicker.js");
+            Requirements::themedJavascript("js/common/chosen.min.js");
+            Requirements::themedJavascript("js/common/bootstrap-checkbox.js");
+            Requirements::themedJavascript("js/common/nice-scroll.js");
+            Requirements::themedJavascript("js/common/jquery-browser.js");
+            Requirements::themedJavascript("js/scripts.js");
         }
     }
 }
