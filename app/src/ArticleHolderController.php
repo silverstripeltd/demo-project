@@ -7,7 +7,7 @@ use SilverStripe\Control\HTTPRequest;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\PaginatedList;
 
-class ArticleHolder_Controller extends PageController
+class ArticleHolderController extends PageController
 {
 
     private static $allowed_actions = [

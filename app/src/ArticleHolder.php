@@ -47,10 +47,13 @@ class ArticleHolder extends Page
         $list = ArrayList::create();
         $stage = Versioned::get_stage();
 
-        $query = new SQLSelect([]);
-        $query->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')", "DateString")
-            ->setFrom("ArticlePage_{$stage}")
-            ->setOrderBy("Date", "ASC")
+        $baseTable = ArticlePage::getSchema()->tableName(ArticlePage::class);
+        $tableName = $stage === Versioned::LIVE ? "{$baseTable}_Live" : $baseTable;
+        $query = SQLSelect::create()
+            ->setSelect([])
+            ->selectField("DATE_FORMAT(`Date`,'%Y_%M_%m')", "DateString")
+            ->setFrom($tableName)
+            ->setOrderBy("DateString", "ASC")
             ->setDistinct(true);
 
         $result = $query->execute();
