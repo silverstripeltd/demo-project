@@ -4,14 +4,12 @@ namespace App\Web;
 
 use PageController;
 use SilverStripe\Forms\TextField;
-use SilverStripe\Control\Email\Email;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\FormAction;
 use SilverStripe\Forms\RequiredFields;
 use SilverStripe\Forms\Form;
-use SilverStripe\Control\Session;
 
 class ArticlePageController extends PageController
 {
@@ -26,7 +24,7 @@ class ArticlePageController extends PageController
             __FUNCTION__,
             FieldList::create(
                 TextField::create('Name', ''),
-                EmailField::create(Email::class, ''),
+                EmailField::create('Email', ''),
                 TextareaField::create('Comment', '')
             ),
             FieldList::create(
@@ -34,7 +32,7 @@ class ArticlePageController extends PageController
                     ->setUseButtonTag(true)
                     ->addExtraClass('btn btn-default-color btn-lg')
             ),
-            RequiredFields::create('Name', Email::class, 'Comment')
+            RequiredFields::create('Name', 'Email', 'Comment')
         )->addExtraClass('form-style');
 
         foreach ($form->Fields() as $field) {
@@ -50,21 +48,25 @@ class ArticlePageController extends PageController
 
     public function handleComment($data, $form)
     {
-        Session::set("FormData.{$form->getName()}.data", $data);
+        $session = $this->getRequest()->getSession();
+        $session->set("FormData.{$form->getName()}.data", $data);
+
         $existing = $this->Comments()->filter([
             'Comment' => $data['Comment']
         ]);
+
         if ($existing->exists() && strlen($data['Comment']) > 20) {
             $form->sessionMessage('That comment already exists! Spammer!', 'bad');
 
             return $this->redirectBack();
         }
+
         $comment = ArticleComment::create();
         $comment->ArticlePageID = $this->ID;
         $form->saveInto($comment);
         $comment->write();
 
-        Session::clear("FormData.{$form->getName()}.data");
+        $session->clear("FormData.{$form->getName()}.data");
         $form->sessionMessage('Thanks for your comment', 'good');
 
         return $this->redirectBack();
