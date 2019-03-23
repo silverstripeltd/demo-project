@@ -18,7 +18,7 @@
 				<div class="blog-bottom-info">
 					<ul>
 						<li><i class="fa fa-calendar"></i> $Date.Long</li>
-						<li><i class="fa fa-comments-o"></i> 3 Comments</li>
+						<li><i class="fa fa-comments-o"></i>$Comments.Count() Comment(s)</li>
 						<li><i class="fa fa-tags"></i> $CategoriesList</li>
 					</ul>
 					
