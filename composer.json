@@ -6,12 +6,12 @@
         "silverstripe-themes/simple": "*",
         "silverstripe/crontask": "^2.1.1",
         "silverstripe/dynamodb": "^4.0.1",
-        "silverstripe/recipe-cms": "^4.3.1"
+        "silverstripe/recipe-cms": "^4"
     },
     "config": {
         "process-timeout": 600
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "project-files-installed": [
             "app/.htaccess",
@@ -27,7 +27,7 @@
             "install.php",
             "web.config"
         ],
-        "expose":[
+        "expose": [
             "themes/one-ring/css",
             "themes/one-ring/fonts",
             "themes/one-ring/images",
