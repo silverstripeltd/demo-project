@@ -14,6 +14,10 @@ use SilverStripe\Forms\DateField;
 
 class ArticlePage extends Page
 {
+    private static $db = [
+        'Date' => 'BadDateClass',
+    ];
+
     private static $has_one = [
         'Photo' => Image::class,
         'Brochure' => File::class,
