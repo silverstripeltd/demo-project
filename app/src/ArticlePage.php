@@ -32,35 +32,6 @@ class ArticlePage extends Page
 
     private static $table_name = 'ArticlePage';
 
-    public function getCMSFields()
-    {
-        $fields = parent::getCMSFields();
-
-        $fields->addFieldToTab('Root.Attachments', $photo = UploadField::create('Photo'));
-        $fields->addFieldToTab('Root.Attachments',
-            $brochure = UploadField::create('Brochure', 'Travel brochure, optional (PDF only)'));
-
-        $photo->getValidator()->setAllowedExtensions(['png', 'gif', 'jpg', 'jpeg']);
-        $photo->setFolderName('travel-photos');
-
-        $brochure->getValidator()->setAllowedExtensions(['pdf']);
-        $brochure->setFolderName('travel-brochures');
-
-        $fields->addFieldToTab('Root.Categories', CheckboxSetField::create(
-            'Categories',
-            'Selected categories',
-            $this->Parent()->Categories()->map('ID', 'Title')
-        ));
-
-        $fields->addFieldToTab('Root.Main', DropdownField::create(
-            'RegionID',
-            'Region',
-            Region::get()->map('ID', 'Title')
-        )->setEmptyString('-- None --'), 'Content');
-
-        return $fields;
-    }
-
     public function CategoriesList()
     {
         if ($this->Categories()->exists()) {
