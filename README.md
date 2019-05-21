@@ -1,10 +1,19 @@
 ## Overview
 
-Base project folder for a SilverStripe ([http://silverstripe.org](http://silverstripe.org)) installation. Requires additional modules to function:
+This repository contains a SilverStripe project used to demo on SilverStripe Cloud Platform.
 
- * [`framework`](http://github.com/silverstripe/silverstripe-framework): Module including the base framework
- * [`cms`](http://github.com/silverstripe/silverstripe-cms): Module including a Content Management System
- * `themes/simple` (optional)
+This is the `add_cron_to_platform` - Configures the `.platform.yml` file to add cron tasks to the stack.
+
+The other branches below are used to demonstrate changes in the CMS, introduce bugs and action deployments on the platform.  
+
+* `master` - used as the initial deployment and starting point for the demo.
+* `add-articlepage-fields branch` - Adds Date, Teaser and Author fields to the article page. 
+* `remove-article-page-fields` - Removes all custom fields including Categories and Attachment tabs on the article page.  
+* `bug-in-dev-build` - Injects a deliberate bug in the dev/build
+* `request-debugger` - Adds a simple request debugging script
+
+## Updates to the Project ## 
+Please create a pull request for each branch to apply any update/fixes. 
 
 ## Installation ##
 
