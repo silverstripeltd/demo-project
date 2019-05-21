@@ -2,7 +2,7 @@
 
 This repository contains a SilverStripe project used to demo on SilverStripe Cloud Platform.
 
-This is the `add_cron_to_platform` - Configures the `.platform.yml` file to add cron tasks to the stack.
+This branch is `add_cron_to_platform` - Configures the `.platform.yml` file to add cron tasks to the stack.
 
 The other branches below are used to demonstrate changes in the CMS, introduce bugs and action deployments on the platform.  
 
@@ -14,6 +14,8 @@ The other branches below are used to demonstrate changes in the CMS, introduce b
 
 ## Updates to the Project ## 
 Please create a pull request for each branch to apply any update/fixes. 
+
+Any updates that are not part of the demo (eg framework upgrades) will have to be applied into to all branches listed above for consistency. 
 
 ## Installation ##
 
