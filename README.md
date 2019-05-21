@@ -2,7 +2,7 @@
 
 This repository contains a SilverStripe project used to demo on SilverStripe Cloud Platform.
 
-This is the `add-articlepage-fields branch` - Adds Date, Teaser and Author fields to the article page. 
+This branch is `add-articlepage-fields branch` - Adds Date, Teaser and Author fields to the article page. 
 
 The other branches below are used to demonstrate changes in the CMS, introduce bugs and action deployments on the platform.  
 
@@ -10,7 +10,7 @@ The other branches below are used to demonstrate changes in the CMS, introduce b
 * `remove-article-page-fields` - Removes all custom fields including Categories and Attachment tabs on the article page.  
 * `bug-in-dev-build` - Injects a deliberate bug in the dev/build
 * `request-debugger` - Adds a simple request debugging script
-* `add_cron_to_platform` - Configures the .platform.yml file to add cron tasks to the stack.
+* `add_cron_to_platform` - Configures the `.platform.yml` file to add cron tasks to the stack.
 
 ## Updates to the Project ## 
 Please create a pull request for each branch to apply any update/fixes. 
