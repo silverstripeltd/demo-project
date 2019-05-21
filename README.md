@@ -16,6 +16,7 @@ The other branches below are used to demonstrate changes in the CMS, introduce b
 Please create a pull request for each branch to apply any update/fixes. 
  
 Any updates that are not part of the demo (eg framework upgrades) will have to be applied into to all branches listed above for consistency. 
+
 ## Installation ##
 
 See [installation on different platforms](http://doc.silverstripe.org/framework/en/installation/),
